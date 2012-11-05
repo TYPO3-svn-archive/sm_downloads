@@ -7,8 +7,16 @@
 	<data type="array">
 		<languageKey index="default" type="array">
 			<label index="tx_smdownloads_domain_model_file">File</label>
-			<label index="tx_smdownloads_domain_model_file.name">name</label>
+			<label index="tx_smdownloads_domain_model_file.name">Name</label>
 			<label index="tx_smdownloads_domain_model_file.size">size</label>
+            <label index="fileNotFound">File not found</label>
+            <label index="missingConfig">Plugin not configured</label>
 		</languageKey>
+        <languageKey index="de" type="array">
+            <label index="tx_smdownloads_domain_model_file">Datei</label>
+            <label index="tx_smdownloads_domain_model_file.name">Name</label>
+            <label index="tx_smdownloads_domain_model_file.size">Größe</label>
+            <label index="missingConfig">Plugin nicht konfiguriert</label>
+        </languageKey>
 	</data>
 </T3locallang>

@@ -63,7 +63,7 @@ class Tx_SmDownloads_Controller_FileController extends Tx_Extbase_MVC_Controller
             $path = $path.$folderName.'/';
         }
         if (empty($path)){
-            return 'missing config'; //TODO Label
+            return Tx_Extbase_Utility_Localization::translate('missingConfig', 'sm_downloads');
         } else {
 
             $files = $this->fileRepository->getFilesByPath($path);
@@ -89,7 +89,7 @@ class Tx_SmDownloads_Controller_FileController extends Tx_Extbase_MVC_Controller
             readfile($path.$fileName);
             return TRUE;
         } else {
-            return 'Datei nicht vorhanden'; //TODO Label
+            return Tx_Extbase_Utility_Localization::translate('fileNotFound', 'sm_downloads');
         }
 	}
 
