@@ -1,0 +1,21 @@
+{namespace m=Tx_SmDownloads_ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="main">
+
+<f:for each="{files}" as="file">
+	<f:if condition="{file.isFolder}">
+		<f:then>
+			<f:link.action controller="File" action="list" arguments="{folderName: file.name, path: path}">
+				Ordner: {file.name}
+			</f:link.action><br/>
+		</f:then>
+		<f:else>
+			<f:link.action controller="File" action="download" arguments="{fileName: file.name,mime: file.mime, path: path}">
+			{file.name} <m:fileSize byte="{file.size}" />
+			</f:link.action><br/>
+		</f:else>
+	</f:if>
+</f:for>
+	
+</f:section>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:sm_downloads/Resources/Private/Language/locallang_db.php:tx_smdownloads_domain_model_file.flexform.generaltab</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.flexform.path>
+                        <TCEforms>
+                            <label>LLL:EXT:sm_downloads/Resources/Private/Language/locallang_db.php:tx_smdownloads_domain_model_file.flexform.path</label>
+                            <config>
+                                <type>group</type>
+                                <size>1</size>
+                                <internal_type>folder</internal_type>
+                            </config>
+                        </TCEforms>
+                    </settings.flexform.path>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

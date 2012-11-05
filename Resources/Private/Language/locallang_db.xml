@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'sm_downloads'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+            
+			<label index="tx_smdownloads_domain_model_file">File</label>
+			<label index="tx_smdownloads_domain_model_file.name">Name</label>
+            <label index="tx_smdownloads_domain_model_file.size">Size</label>
+            <label index="tx_smdownloads_domain_model_file.flexform.generaltab">Settings</label>
+            <label index="tx_smdownloads_domain_model_file.flexform.path">Root folder</label>
+
+
+		</languageKey>
+	</data>
+</T3locallang>
