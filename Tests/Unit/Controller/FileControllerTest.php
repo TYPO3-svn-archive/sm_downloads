@@ -68,11 +68,11 @@ class Tx_Sm_downloads_Controller_FileControllerTest extends Tx_Extbase_Tests_Uni
 
         $fileName = 'localconf.php';
         $path = 'typo3conf/';
-        $this->assertEquals('Datei nicht vorhanden', $controller->downloadAction($fileName, ' ', $path));
+        $this->assertEquals('File not found', $controller->downloadAction($fileName, ' ', $path));
 
         $fileName = 'walla_walla.JPG';
         $path = 'typo3conf/ext/sm_downloads/Tests/Dummy/';
-        $this->assertEquals('Datei nicht vorhanden', $controller->downloadAction($fileName, ' ', $path));
+        $this->assertEquals('File not found', $controller->downloadAction($fileName, ' ', $path));
 
         $fileName = 'IMG_1234.JPG';
         $path = 'typo3conf/ext/sm_downloads/Tests/Dummy/';
