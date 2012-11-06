@@ -54,12 +54,8 @@ class Tx_Sm_downloads_Controller_FileControllerTest extends Tx_Extbase_Tests_Uni
 	 * @test
 	 */
 	public function downloadAction() {
-		$fileName = 'localconf.php';
-        $path = 'typo3conf/';
+		$controller = $this->getMock('Tx_SmDownloads_Controller_FileController', array('download'));
 
-        $controller = $this->getMock('Tx_SmDownloads_Controller_FileController', array('download'));
-
-        $reflection = new ReflectionClass ($controller);
         $reflector = new ReflectionProperty('Tx_SmDownloads_Controller_FileController', 'settings');
         $reflector->setAccessible(true);
         $reflector->setValue($controller, array( 'flexform'
