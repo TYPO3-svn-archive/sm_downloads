@@ -4,7 +4,7 @@
  *  Copyright notice
  *
  *  (c) 2012 Stefan Masztalerz <stefan.masztalerz@aoemedia.de>, AOEmedia
- *  			
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -50,17 +50,17 @@ class Tx_Sm_downloads_Controller_FileControllerTest extends Tx_Extbase_Tests_Uni
 		unset($this->fixture);
 	}
 
-	/**
-	 * @test
-	 */
-	public function downloadAction() {
-		$controller = $this->getMock('Tx_SmDownloads_Controller_FileController', array('download'));
+    /**
+     * @test
+     */
+    public function downloadAction(){
+        $controller = $this->getMock('Tx_SmDownloads_Controller_FileController', array('isValidPath'));
 
         $reflector = new ReflectionProperty('Tx_SmDownloads_Controller_FileController', 'settings');
         $reflector->setAccessible(true);
         $reflector->setValue($controller, array( 'flexform'
-                                          => array ( 'path'
-                                            => 'typo3conf/ext/sm_downloads/Tests/Dummy/')));
+                                                 => array ( 'path'
+                                                            => 'typo3conf/ext/sm_downloads/Tests/Dummy/')));
 
         $fileName = 'localconf.php';
         $path = 'typo3conf/';
@@ -70,10 +70,14 @@ class Tx_Sm_downloads_Controller_FileControllerTest extends Tx_Extbase_Tests_Uni
         $path = 'typo3conf/ext/sm_downloads/Tests/Dummy/';
         $this->assertEquals('File not found', $controller->downloadAction($fileName, ' ', $path));
 
+        $fileName = 'localconf.php';
+        $path = 'typo3conf/ext/sm_downloads/Tests/Dummy/../../../';
+        $this->assertEquals('File not found', $controller->downloadAction($fileName, ' ', $path));
+
         $fileName = 'IMG_1234.JPG';
         $path = 'typo3conf/ext/sm_downloads/Tests/Dummy/';
-        $this->assertEquals(TRUE, $controller->downloadAction($fileName, 'image/jpeg', $path));
-    }
+        $this->assertEquals(TRUE, $controller->downloadAction($fileName, ' ', $path));
 
+    }
 }
 ?>

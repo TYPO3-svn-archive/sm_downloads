@@ -81,8 +81,8 @@ class Tx_SmDownloads_Controller_FileController extends Tx_Extbase_MVC_Controller
 	 * @return boolean
 	 */
 	public function downloadAction($fileName,$mime, $path) {
-        $inRightFolder = strpos($path, $this->settings['flexform']['path']);
-        if (is_file($_SERVER['DOCUMENT_ROOT'].'/'.$path.$fileName) && ($inRightFolder === 0 || TRUE == $inRightFolder)){
+        $isValid = $this->isValid($path, $fileName);
+        if ($isValid){
             header('HTTP/1.1 200 OK');
             header('Content-type: '.$mime);
             header('Content-Disposition: attachment; filename="'.$fileName.'"');
@@ -93,5 +93,17 @@ class Tx_SmDownloads_Controller_FileController extends Tx_Extbase_MVC_Controller
         }
 	}
 
+    /**
+     * @param $path
+     * @return bool
+     */
+    private function isValid($path, $fileName){
+        $inRightFolder = strpos($path, $this->settings['flexform']['path']);
+        $relative = strpos("../", $this->settings['flexform']['path']); //is not allowed
+        if((TRUE === $inRightFolder || $inRightFolder === 0) && FALSE === $relative && TRUE === is_file($_SERVER['DOCUMENT_ROOT'].'/'.$path.$fileName)) {
+            return TRUE;
+        }
+        return FALSE;
+    }
 }
 ?>
