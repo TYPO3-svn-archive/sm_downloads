@@ -28,7 +28,7 @@ Making Downloadlinks & Folders all by its own. Just upload, maybe add your style
     'modify_tables' => '',
     'clearCacheOnLoad' => 0,
     'lockType' => '',
-    'version' => '1.0.0',
+    'version' => '1.0.1',
     'constraints' => array(
         'depends' => array(
             'extbase' => '1.3',
