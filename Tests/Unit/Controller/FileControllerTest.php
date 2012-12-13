@@ -32,7 +32,7 @@
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  * @package TYPO3
- * @subpackage Simpel Downloadcenter
+ * @subpackage Simple Downloadcenter
  *
  * @author Stefan Masztalerz <stefan.masztalerz@aoemedia.de>
  */
