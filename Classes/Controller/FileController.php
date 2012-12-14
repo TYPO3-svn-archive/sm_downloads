@@ -67,6 +67,7 @@ class Tx_SmDownloads_Controller_FileController extends Tx_Extbase_MVC_Controller
         } else {
 
             $files = $this->fileRepository->getFilesByPath($path);
+            $this->view->assign('settings', $this->settings);
             $this->view->assign('files', $files);
             $this->view->assign('path', $path);
         }
