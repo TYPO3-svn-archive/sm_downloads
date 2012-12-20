@@ -61,6 +61,27 @@ class Tx_SmDownloads_Domain_Model_File extends Tx_Extbase_DomainObject_AbstractV
     protected $mime;
 
     /**
+     * @var string $folderImage
+     */
+    protected $folderImage;
+
+    /**
+     * @param string $folderImage
+     */
+    public function setFolderImage($folderImage)
+    {
+        $this->folderImage = $folderImage;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFolderImage()
+    {
+        return $this->folderImage;
+    }
+
+    /**
      * @param $mime
      */
     public function setMime($mime){

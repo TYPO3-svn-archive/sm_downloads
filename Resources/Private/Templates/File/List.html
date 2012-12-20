@@ -7,7 +7,7 @@
 	<f:if condition="{file.isFolder}">
 		<f:then>
 			<f:link.action class="folder" controller="File" action="list" arguments="{folderName: file.name, path: path}">
-				{file.name}
+				<f:if condition="{file.folderImage}"><f:then><img src="{file.folderImage}" alt="{file.name}" /></f:then></f:if> {file.name}
 			</f:link.action><br/>
 		</f:then>
 		<f:else>
